@@ -27,4 +27,5 @@ export const pageStyle = {
   maxWidth: '1280px',
   paddingLeft: '24px',
   paddingRight: '24px',
+  top: 0,
 };
