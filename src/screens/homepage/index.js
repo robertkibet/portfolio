@@ -9,7 +9,7 @@ const Homepage = () => (
       PROBLEMS"
     />
     <Text
-      content="APART FROM COOKING, I ENJOY HIKING."
+      content="I ENJOY HIKING AS MUCH AS COOKING ;P "
     />
   </>
 );

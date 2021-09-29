@@ -24,7 +24,7 @@ const AppBar = styled(Container)`
 const Header = () => (
   <Wrapper>
     <AppBar>
-      <Link href="/">
+      <Link passHref href="/">
         <Title>Robert Kibet</Title>
       </Link>
       <Socials />

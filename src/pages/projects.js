@@ -1,6 +1,6 @@
-import Projects from "../screens/projects";
+import Projects from '../screens/projects';
 
-const Project=()=> (
-  <Projects/>
+const Project = () => (
+  <Projects />
 );
 export default Project;
