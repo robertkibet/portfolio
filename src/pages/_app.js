@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { AnimateSharedLayout } from 'framer-motion';
 import styled from '@emotion/styled';
 import Header from '../components/header';
 import { Container } from '../components/shared';
@@ -69,7 +70,9 @@ export default function MyApp({ Component, pageProps }) {
         <Header />
         <Navbar />
         <Wrapper>
-          <Component {...pageProps} />
+          <AnimateSharedLayout>
+            <Component {...pageProps} />
+          </AnimateSharedLayout>
         </Wrapper>
         <Footer />
       </main>
