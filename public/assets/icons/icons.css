@@ -1,0 +1,102 @@
+@import url('./css/fontello.css');
+.icon-account:before {
+  content: '\e800';
+}
+
+/* '' */
+
+.icon-bin:before {
+  content: '\e802';
+}
+
+/* '' */
+
+.icon-cart:before {
+  content: '\e803';
+}
+
+/* '' */
+
+.icon-categories:before {
+  content: '\e804';
+}
+
+/* '' */
+
+.icon-chat-texts:before {
+  content: '\e805';
+}
+
+/* '' */
+
+.icon-chat:before {
+  content: '\e806';
+}
+
+/* '' */
+
+.icon-delivery-guy:before {
+  content: '\e807';
+}
+
+/* '' */
+
+.icon-discover:before {
+  content: '\e808';
+}
+
+/* '' */
+
+.icon-edit:before {
+  content: '\e809';
+}
+
+/* '' */
+
+.icon-filter:before {
+  content: '\e80a';
+}
+
+/* '' */
+
+.icon-gifts:before {
+  content: '\e80b';
+}
+
+/* '' */
+
+.icon-help:before {
+  content: '\e80c';
+}
+
+/* '' */
+
+.icon-home:before {
+  content: '\e80d';
+}
+
+/* '' */
+
+.icon-map:before {
+  content: '\e80f';
+}
+
+/* '' */
+
+.icon-pesa:before {
+  content: '\e810';
+}
+
+/* '' */
+
+.icon-pickup:before {
+  content: '\e811';
+}
+
+/* '' */
+
+.icon-back:before {
+  content: '\e812';
+}
+
+/* '' */
