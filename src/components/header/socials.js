@@ -21,13 +21,13 @@ const Socials = () => {
   return (
     <Wrapper>
       <Link onClick={() => handleSocialsClick('github')} target="_blank" href="https://github.com/robertkibet">
-        <Icon name="github" color={colors.sweetGrean} size="25px" />
+        <Icon name="github" color={colors.sweetGreen} size="25px" />
       </Link>
       <Link onClick={() => handleSocialsClick('linkedin')} target="_blank" href="https://www.linkedin.com/in/robert-kiprono-a09889a4/">
-        <Icon name="linkedin" color={colors.sweetGrean} size="25px" />
+        <Icon name="linkedin" color={colors.sweetGreen} size="25px" />
       </Link>
       <Link onClick={() => handleSocialsClick('twitter')} target="_blank" href="https://twitter.com/realrobertkibet">
-        <Icon name="twitter" color={colors.sweetGrean} size="25px" />
+        <Icon name="twitter" color={colors.sweetGreen} size="25px" />
       </Link>
     </Wrapper>
   );

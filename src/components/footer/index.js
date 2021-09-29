@@ -5,7 +5,7 @@ import Text from '../text';
 const Wrapper = styled.div`
   position: fixed;
   bottom:0;
-  background-color: ${colors.sweetGrean};
+  background-color: ${colors.sweetGreen};
   color: ${colors.white};
   height: 40px;
   width: 100%;

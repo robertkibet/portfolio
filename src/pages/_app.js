@@ -8,13 +8,14 @@ import Navbar from '../components/header/navbar';
 import Footer from '../components/footer';
 
 const Wrapper = styled(Container)`
-  min-height: 100vh;
+  height: 100vh;
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 100px;
+  padding-top: 120px;
+  margin-bottom: 300px;
 `;
 
 const gtagInit = () => {

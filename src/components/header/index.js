@@ -7,9 +7,11 @@ import Socials from './socials';
 const Wrapper = styled.div`
   position: fixed;
   display: block;
+  z-index: 99;
   height: 60px;
   width: 100%;
   border-bottom: 1px solid ${colors.sweetBlueLine};
+  background-color: ${colors.white};
 `;
 const Title = styled.h4`
   font-weight: 600px;

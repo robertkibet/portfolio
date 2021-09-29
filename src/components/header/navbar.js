@@ -6,11 +6,13 @@ import Text from '../text';
 
 const Wrapper = styled.div`
   position: fixed;
-  top: 60px;
+  z-index: 98;
+  top: 55px;
   display: block;
-  height: 40px;
+  height: 50px;
   width: 100%;
   box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+  background-color: ${colors.white};
 `;
 const AppBar = styled(Container)`
   display: flex;
@@ -45,10 +47,10 @@ const Navbar = () => {
     <Wrapper>
       <AppBar>
         <Content onClick={() => navigateTo('/projects')}>
-          <Text content="Projects" fontWeight="600" />
+          <Text content="Projects" fontWeight="700" />
         </Content>
-        <Content>
-          <Text content="Blog" fontWeight="600" />
+        <Content onClick={() => navigateTo('/blog')}>
+          <Text content="Blog" fontWeight="700" />
         </Content>
       </AppBar>
     </Wrapper>

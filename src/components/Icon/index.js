@@ -17,7 +17,7 @@ const IconWrapper = styled.i`
   }
 
   &: hover{
-    // background-color: ${colors.sweetGrean};
+    // background-color: ${colors.sweetGreen};
     background-color: rgba(46, 125, 50, 0.2);
     transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   }

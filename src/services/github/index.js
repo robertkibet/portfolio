@@ -1,6 +1,16 @@
 import axios from 'axios';
 import React from 'react';
 
+const projectNames = [
+  'mfe-react-single-spa',
+  'isFunny',
+  'terraform-with-gcp',
+  'mpesa-node-playground',
+  'nestjs-demo-graphql',
+  'react-csv',
+  'storybook-playground',
+];
+
 const useGithub = () => {
   const [projects, setProjects] = React.useState([]);
   const apiKey = process.browser && process.env.NEXT_PUBLIC_GIT_TOKEN;
@@ -14,7 +24,11 @@ const useGithub = () => {
           }, // eslint-disable-line
         })
         .then((response) => {
-          const projectsFetched = response.data.filter((item) => item.private === false);
+          const projectsFetched = response.data.filter((item) => {
+            if (projectNames.some((p) => p === item.name)) return item;
+            return null;
+          });
+          console.log(response.data);
           setProjects(projectsFetched);
         });
     };
