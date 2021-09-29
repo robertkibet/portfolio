@@ -9,6 +9,7 @@ const projectNames = [
   'nestjs-demo-graphql',
   'react-csv',
   'storybook-playground',
+  'portfolio',
 ];
 
 const useGithub = () => {
