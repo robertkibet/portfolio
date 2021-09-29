@@ -7,8 +7,6 @@ const projectNames = [
   'terraform-with-gcp',
   'mpesa-node-playground',
   'nestjs-demo-graphql',
-  'react-csv',
-  'storybook-playground',
   'portfolio',
 ];
 
