@@ -14,8 +14,8 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
   gap: 20px;
  
-  @media(max-width: 800px){
-    margin-top: 200px;
+  @media(max-width: 1400px){
+    margin-top: 150px;
   }
 `;
 const Avatar = styled.div`
