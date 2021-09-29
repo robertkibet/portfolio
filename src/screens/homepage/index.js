@@ -10,6 +10,7 @@ const Wrapper = styled.div`
   gap: 20px;
  
   @media(max-width: 1400px){
+    margin-bottom: 150px;
     margin-top: 150px;
   }
 `;
