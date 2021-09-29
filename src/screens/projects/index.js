@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Head from 'next/head';
 import Text from '../../components/text';
 import useGithub from '../../services/github';
 import colors from '../../theme/colors';
@@ -70,9 +71,14 @@ const Projects = () => {
   };
 
   return (
-    <Wrapper>
-      <Projos />
-    </Wrapper>
+    <>
+      <Head>
+        <title>Projects - Robert Kibet</title>
+      </Head>
+      <Wrapper>
+        <Projos />
+      </Wrapper>
+    </>
   );
 };
 

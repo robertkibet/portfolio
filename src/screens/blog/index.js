@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
+import Head from 'next/head';
 import Text from '../../components/text';
 import { Container } from '../../components/shared';
 
@@ -55,6 +56,9 @@ const Menus = styled.div`
 
 const Blog = () => (
   <Box>
+    <Head>
+      <title>Blogs - Robert Kibet</title>
+    </Head>
     <Header>
       <Text
         fontSize="16px"
