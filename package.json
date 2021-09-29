@@ -1,7 +1,9 @@
 {
+  "name": "skele",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3002",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -10,20 +12,22 @@
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
     "@sentry/nextjs": "^6.13.2",
+    "axios": "^0.21.4",
     "github-repo-fetch": "^1.0.2",
-    "next": "latest",
-    "next-pwa": "^3.1.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "next": "11.1.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
+    "eslint": "7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-next": "^11.1.2",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.0",
-    "eslint-plugin-react-hooks": "^4.2.0"
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.4.1"
   }
 }

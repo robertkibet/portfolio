@@ -1,19 +1,24 @@
-const withPWA = require('next-pwa')
-const runtimeCaching = require('next-pwa/cache')
+// const withPWA = require('next-pwa')
+// const runtimeCaching = require('next-pwa/cache')
 const { withSentryConfig } = require('@sentry/nextjs');
+
+const prod = process.env.NEXT_PUBLIC_ENVIRONMENT === 'production'
 
 // This file sets a custom webpack configuration to use your Next.js app
 // with Sentry.
 // https://nextjs.org/docs/api-reference/next.config.js/introduction
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/
 
-
-const moduleExports = withPWA({
-  pwa: {
-    dest: 'public',
-    runtimeCaching,
-  },
-})
+const moduleExports={
+  reactStrictMode: true,
+}
+// const moduleExports = withPWA({
+//   pwa: {
+//     dest: 'public',
+//     disable: !prod,
+//     runtimeCaching,
+//   },
+// })
 
 const SentryWebpackPluginOptions = {
   // Additional config options for the Sentry Webpack plugin. Keep in mind that

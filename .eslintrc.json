@@ -1,56 +1,45 @@
 {
-    "env": {
-      "browser": true,
-      "es2021": true,
-      "jest": true
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "extends": ["next/core-web-vitals", "plugin:react/recommended", "airbnb"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": [
-      "plugin:react/recommended",
-      "airbnb",
-      "next/core-web-vitals",
-      "prettier"
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "prettier"],
+  "rules": {
+    "no-console": "error",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
     ],
-    "parserOptions": {
-      "ecmaFeatures": {
-        "jsx": true
-      },
-      "ecmaVersion": 12,
-      "sourceType": "module"
-    },
-    "plugins": [
-      "react"
+    "max-len": [
+      "warn",
+      {
+        "code": 170
+      }
     ],
-    "rules": {
-      "no-console": "error",
-      "react/jsx-filename-extension": [
-        1,
-        {
-          "extensions": [
-            ".js",
-            ".jsx"
-          ]
-        }
-      ],
-      "max-len": [
-        "warn",
-        {
-          "code": 140
-        }
-      ],
-      "linebreak-style": "off",
-      "react/jsx-uses-react": "off",
-      "react/react-in-jsx-scope": "off",
-      "react/prop-types": "off",
-      "react/require-default-props": 0,
-      "react/jsx-props-no-spreading": 0,
-      "no-underscore-dangle": 0,
-      "react/forbid-prop-types": 0,
-      "react/static-property-placement": 0,
-      "import/imports-first": [
-        "error",
-        "absolute-first"
-      ],
-      "import/newline-after-import": "error",
-      "react/destructuring-assignment": 0
-    }
+    "linebreak-style": "off",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/require-default-props": 0,
+    "react/jsx-props-no-spreading": 0,
+    "no-underscore-dangle": 0,
+    "react/forbid-prop-types": 0,
+    "react/static-property-placement": 0,
+    "import/imports-first": ["error", "absolute-first"],
+    "import/newline-after-import": "error",
+    "react/destructuring-assignment": 0
   }
+}

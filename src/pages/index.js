@@ -1,6 +1,6 @@
-import Homepage from "./screens/homepage";
+import Homepage from '../screens/homepage';
 
-const  Home=()=> (
-  <Homepage/>
+const Home = () => (
+  <Homepage />
 );
 export default Home;

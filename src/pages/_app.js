@@ -1,16 +1,33 @@
-import Head from 'next/head'
+import React from 'react';
+import Head from 'next/head';
 import styled from '@emotion/styled';
 import Header from '../components/header';
+import { Container } from '../components/shared';
+import '../../public/assets/globals.css';
+import '../../public/assets/icons/css/icons.css';
+import Navbar from '../components/header/navbar';
+import Footer from '../components/footer';
 
-const Container = styled.div`
+const Wrapper = styled(Container)`
   min-height: 100vh;
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 1440px;
+  padding-top: 100px;
 `;
+
+const gtagInit = () => {
+  if (process.browser) {
+    window.dataLayer = window.dataLayer || [];
+    // eslint-disable-next-line no-undef
+    const gtag = () => dataLayer.push();
+    gtag('js', new Date());
+    gtag('config', process.env.NEXT_PUBLIC_TAG_MANAGER);
+  }
+};
+
 export default function MyApp({ Component, pageProps }) {
   return (
     <>
@@ -23,30 +40,40 @@ export default function MyApp({ Component, pageProps }) {
         />
         <meta name="description" content="Description" />
         <meta name="keywords" content="Keywords" />
-        <title>Next.js PWA Example</title>
+        <title>Robert Kibet :)</title>
+
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_TAG_MANAGER}`} />
+        <script>
+          {' '}
+          { gtagInit() }
+          {' '}
+        </script>
 
         <link rel="manifest" href="/manifest.json" />
         <link
-          href="/icons/favicon-16x16.png"
+          href="/assets/favicon/android-chrome-192x192.png"
           rel="icon"
           type="image/png"
           sizes="16x16"
         />
         <link
-          href="/icons/favicon-32x32.png"
+          href="/assets/favicon/android-chrome-512x512.png"
           rel="icon"
           type="image/png"
           sizes="32x32"
         />
         <link rel="apple-touch-icon" href="/apple-icon.png" />
-        <meta name="theme-color" content="#317EFB" />
+        <meta name="theme-color" content="#5635be" />
       </Head>
       <main>
-        <Header/>
-        <Container>
+        <Header />
+        <Navbar />
+        <Wrapper>
           <Component {...pageProps} />
-        </Container>
+        </Wrapper>
+        <Footer />
       </main>
+
     </>
-  )
+  );
 }
