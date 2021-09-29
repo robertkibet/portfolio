@@ -13,7 +13,6 @@ const projectNames = [
 const useGithub = () => {
   const [projects, setProjects] = React.useState([]);
   const apiKey = process.browser && process.env.NEXT_PUBLIC_GIT_TOKEN;
-
   React.useEffect(() => {
     const getProjos = async () => {
       await axios
@@ -27,7 +26,6 @@ const useGithub = () => {
             if (projectNames.some((p) => p === item.name)) return item;
             return null;
           });
-          console.log(response.data);
           setProjects(projectsFetched);
         });
     };

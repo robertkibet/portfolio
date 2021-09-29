@@ -1,6 +1,4 @@
 import styled from '@emotion/styled';
-import Link from 'next/link';
-import Image from 'next/image';
 import Text from '../../components/text';
 import useGithub from '../../services/github';
 import colors from '../../theme/colors';
@@ -26,6 +24,11 @@ const Avatar = styled.div`
   bottom:10px;
   right: 10px;
   background-color: ${colors.sweetGreen};
+`;
+const Link = styled.a`
+  text-decoration: none;
+  margin: 0;
+  padding:0;
 `;
 const Items = styled.div`
   padding: 20px;
@@ -54,7 +57,7 @@ const Projects = () => {
   const Projos = () => {
     if (projects && projects.length > 0) {
       return projects.map((item) => (
-        <Link passHref href="/" key={item.id}>
+        <Link target="_blank" href={item.html_url} key={item.id}>
           <Items>
             <Text content={replaceHyphen(item.name)} color={colors.white} fontWeight="700" fontSize="1.5rem" />
             <Text content={item.description} color={colors.white} />
