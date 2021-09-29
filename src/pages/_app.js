@@ -17,6 +17,7 @@ const Wrapper = styled(Container)`
   align-items: center;
   padding-top: 120px;
   margin-bottom: 300px;
+  position: relative;
 `;
 
 const gtagInit = () => {

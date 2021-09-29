@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Text from '../../components/text';
 import useGithub from '../../services/github';
 import colors from '../../theme/colors';
+import ProjectsShimmer from './shimmer';
 
 const Wrapper = styled.div`
   min-height: 600px;
@@ -12,6 +13,10 @@ const Wrapper = styled.div`
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 20px;
+ 
+  @media(max-width: 800px){
+    margin-top: 200px;
+  }
 `;
 const Avatar = styled.div`
   height: 40px;
@@ -27,6 +32,7 @@ const Items = styled.div`
   height: 200px;
   width: 340px;
   display: grid;
+  border-radius: 10px;
   grid-template-rows: max-content max-content 1fr;
   gap: 20px;
   cursor: pointer;
@@ -44,9 +50,9 @@ const Items = styled.div`
 const replaceHyphen = (title) => title.replace(/-/g, ' ');
 const Projects = () => {
   const { projects } = useGithub();
+
   const Projos = () => {
     if (projects && projects.length > 0) {
-      console.log(projects[1]);
       return projects.map((item) => (
         <Link passHref href="/" key={item.id}>
           <Items>
@@ -57,7 +63,7 @@ const Projects = () => {
         </Link>
       ));
     }
-    return <></>;
+    return <ProjectsShimmer />;
   };
 
   return (

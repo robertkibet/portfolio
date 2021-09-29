@@ -24,4 +24,7 @@ export const pageTransition = {
 
 export const pageStyle = {
   position: 'absolute',
+  maxWidth: '1280px',
+  paddingLeft: '24px',
+  paddingRight: '24px',
 };

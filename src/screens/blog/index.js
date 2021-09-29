@@ -1,7 +1,13 @@
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
 import Text from '../../components/text';
+import { Container } from '../../components/shared';
 
+const Box = styled(Container)`
+  @media(max-width: 800px){
+    margin-top: 200px;
+  }
+`;
 const Wrapper = styled.div`
   min-width: 300px;
   max-width: 400px;
@@ -48,11 +54,13 @@ const Menus = styled.div`
 `;
 
 const Blog = () => (
-  <>
+  <Box>
     <Header>
       <Text
         fontSize="16px"
-        content="Just final touches and we will have our first article, I am learning to read more and write more :)"
+        content="Interesting stuff streaming in real soon,
+        highly likely its going to be about a super exciting phenomenon,
+        probably a common one, probably a menu I did recently :)"
       />
     </Header>
     <Wrapper>
@@ -75,7 +83,7 @@ const Blog = () => (
         <Menus width="20%" />
       </Section>
     </Wrapper>
-  </>
+  </Box>
 );
 
 export default Blog;
