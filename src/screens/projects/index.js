@@ -13,10 +13,8 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
   gap: 20px;
  
-  @media(max-width: 1400px){
-    margin-top: 150px;
-    margin-bottom: 150px;
-  }
+  margin-top: 150px;
+  margin-bottom: 150px;
 `;
 const Avatar = styled.div`
   height: 40px;

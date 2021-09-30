@@ -5,10 +5,8 @@ import Text from '../../components/text';
 import { Container } from '../../components/shared';
 
 const Box = styled(Container)`
-  @media(max-width: 1400px){
-    margin-top: 150px;
-    margin-bottom: 150px;
-  }
+  margin-top: 150px;
+  margin-bottom: 150px;
 `;
 const Wrapper = styled.div`
   min-width: 300px;
