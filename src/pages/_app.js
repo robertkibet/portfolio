@@ -80,7 +80,7 @@ export default function MyApp({ Component, pageProps }) {
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_TAG_MANAGER}`} />
         <script>
           {' '}
-          { gtagInit() }
+          { process.env.NEXT_PUBLIC_ENVIRONMENT === 'production' && gtagInit() }
           {' '}
         </script>
 
