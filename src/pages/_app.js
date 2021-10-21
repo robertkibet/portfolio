@@ -23,10 +23,13 @@ const Wrapper = styled(Container)`
 const gtagInit = () => {
   if (process.browser) {
     window.dataLayer = window.dataLayer || [];
-    // eslint-disable-next-line no-undef
-    const gtag = () => dataLayer.push(arguments);
+    // eslint-disable-next-line
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-    gtag('config', process.env.NEXT_PUBLIC_TAG_MANAGER);
+
+    gtag('config', 'G-XDQ4WDNS7N');
+    // eslint-disable-next-line
+    console.log(':::');
   }
 };
 
