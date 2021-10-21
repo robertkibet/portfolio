@@ -30,6 +30,7 @@ const Content = styled.div`
   cursor: pointer;
   text-align: center;
   border-bottom: none;
+  ${({ active }) => active && `border-bottom: 2px solid ${colors.sweetBlue};`}
   &: hover {
     border-bottom: 2px solid ${colors.sweetBlue};
   }
@@ -40,16 +41,15 @@ const Content = styled.div`
 const Navbar = () => {
   const router = useRouter();
   const navigateTo = (link) => {
-    // tracking code
     router.push(link);
   };
   return (
     <Wrapper>
       <AppBar>
-        <Content onClick={() => navigateTo('/projects')}>
+        <Content active={router.pathname === '/projects'} onClick={() => navigateTo('/projects')}>
           <Text content="Projects" fontWeight="700" />
         </Content>
-        <Content onClick={() => navigateTo('/blog')}>
+        <Content active={router.pathname === '/blog'} onClick={() => navigateTo('/blog')}>
           <Text content="Blog" fontWeight="700" />
         </Content>
       </AppBar>
