@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
 import Text from '../../components/text';
+import colors from '../../theme/colors';
 
 const Wrapper = styled.div`
   min-height: 600px;
@@ -23,6 +24,16 @@ const Avatar = styled.div`
     border-radius: 50%;
   }
 `;
+const CurrentRole = styled.code`
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  a {
+    color: ${colors.sweetBlack};
+  }
+`;
 const Homepage = () => (
   <Wrapper>
     <Avatar>
@@ -32,7 +43,7 @@ const Homepage = () => (
         layout="responsive"
         width="410px"
         height="400px"
-        alt="Robert Kibet - Software Engineer Javascript"
+        alt="Robert Kibet - Software Engineer"
       />
     </Avatar>
     <div>
@@ -53,6 +64,17 @@ const Homepage = () => (
         content="I ENJOY HIKING AS MUCH AS COOKING ;P "
         fontSize="14px"
       />
+      <CurrentRole>
+        <Text
+          content="Currently:"
+          fontSize="14px"
+        />
+        <Text
+          content="Software Engineer Javascript"
+          fontSize="14px"
+        />
+        <a href="https://www.safaricom.co.ke/" target="_blank" rel="noreferrer">@SafaricomPLC</a>
+      </CurrentRole>
     </div>
   </Wrapper>
 );
