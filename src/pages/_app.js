@@ -49,10 +49,10 @@ export default function MyApp({ Component, pageProps }) {
         <meta name="title" content="Robert Kibet - Software Engineer" />
         <meta
           name="description"
-          content="I use programming to create cool and enjoyable experiences that solve problems. I enjoy hiking as much as cooking. Hire me :)
+          content="Robert is a Kenyan Software and Web Developer. I use programming to create cool and enjoyable experiences that solve problems. I enjoy hiking as much as cooking. Hire me :)
 "
         />
-        <meta name="keywords" content="software, frontend developer, frontend designer, javascript, frontend engineer, software engineer, nairobi, kenya, top frontend developers in kenya, top software engineers in kenya, engineering, react, node, nextjs" />
+        <meta name="keywords" content="kibet,robert kibet, robert, robert kibet kiprono, software, frontend developer, frontend designer, javascript, frontend engineer, software engineer, nairobi, kenya, top frontend developers in kenya, top software engineers in kenya, engineering, react, node, nextjs" />
         <meta name="robots" content="index, follow" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="English" />
@@ -66,7 +66,7 @@ export default function MyApp({ Component, pageProps }) {
           content="I use programming to create cool and enjoyable experiences that solve problems. I enjoy hiking as much as cooking. Hire me :)
 "
         />
-        <meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png" />
+        <meta property="og:image" content="https://storage.googleapis.com/sensen-ventures.appspot.com/robert-kibet.PNG" />
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://kibet.me/" />
@@ -76,7 +76,7 @@ export default function MyApp({ Component, pageProps }) {
           content="I use programming to create cool and enjoyable experiences that solve problems. I enjoy hiking as much as cooking. Hire me :)
 "
         />
-        <meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png" />
+        <meta property="twitter:image" content="https://storage.googleapis.com/sensen-ventures.appspot.com/robert-kibet.PNG" />
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_TAG_MANAGER}`} />
         <script>
           {' '}
