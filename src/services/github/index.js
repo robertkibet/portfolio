@@ -2,12 +2,16 @@ import axios from 'axios';
 import React from 'react';
 
 const projectNames = [
+  'cra-demo-food-ap',
+  'urls-shortener-cra',
+  'mui-storybook-demo',
   'mfe-react-single-spa',
   'isFunny',
   'terraform-with-gcp',
   'mpesa-node-playground',
   'nestjs-demo-graphql',
   'portfolio',
+  'rc-rating-demo',
 ];
 
 const useGithub = () => {

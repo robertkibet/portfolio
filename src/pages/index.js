@@ -14,4 +14,5 @@ const Home = () => (
     <Homepage />
   </motion.div>
 );
+
 export default Home;

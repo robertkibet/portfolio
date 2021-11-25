@@ -14,4 +14,5 @@ const Project = () => (
     <Projects />
   </motion.div>
 );
+
 export default Project;

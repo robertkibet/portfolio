@@ -28,12 +28,11 @@ const gtagInit = () => {
     gtag('js', new Date());
 
     gtag('config', 'G-XDQ4WDNS7N');
-    // eslint-disable-next-line
-    console.log(':::');
   }
 };
 
-export default function MyApp({ Component, pageProps }) {
+function MyApp(props) {
+  const { Component, pageProps } = props;
   return (
     <>
       <Head>
@@ -114,3 +113,5 @@ export default function MyApp({ Component, pageProps }) {
     </>
   );
 }
+
+export default MyApp;
