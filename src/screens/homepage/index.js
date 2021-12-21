@@ -34,6 +34,74 @@ const CurrentRole = styled.code`
     color: ${colors.sweetBlack};
   }
 `;
+const Pills = styled.div`
+  height: 30px;
+  border-radius: 16px;
+  padding-left: 15px;
+  padding-right: 15px;
+  min-width:50px;
+  display: grid;
+  place-items: center;
+  align-items: center;
+  font-weight: 600;
+  background-color: #efefef;
+  *{
+    margin: 0;
+    padding: 0;
+  }
+`;
+const SkillsWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+`;
+const Skills = styled.div`
+  margin-top: 20px;
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const languages = [
+  'Next.js',
+  'TypeScript',
+  'React',
+  'Node.js',
+  'Express',
+  'MongoDB',
+  'AWS',
+  'GCP',
+  'GraphQL',
+  'JavaScript',
+  'HTML',
+  'CSS',
+  'Rust',
+];
+const ProgrammingSkills = () => (
+  <Skills>
+
+    <SkillsWrapper>
+      {languages.map((language) => (
+        <Pills key={language}>
+          <Text
+            content={language}
+            fontSize="12px"
+            fontWeight="600"
+          />
+        </Pills>
+      ))}
+    </SkillsWrapper>
+    <Text
+      content="Please feel free to contact me if you have any questions or want to work together."
+      fontSize="14px"
+    />
+  </Skills>
+);
 const Homepage = () => (
   <Wrapper>
     <Avatar>
@@ -41,7 +109,7 @@ const Homepage = () => (
         priority
         src="https://storage.googleapis.com/sensen-ventures.appspot.com/robert-kibet-software-engineer.jpg"
         layout="responsive"
-        width="410px"
+        width="400px"
         height="400px"
         alt="Robert Kibet - Software Engineer"
       />
@@ -49,8 +117,8 @@ const Homepage = () => (
     <div>
       <Text
         content="Robert Kibet Kiprono"
-        fontWeight="400"
-        fontSize="16px"
+        fontWeight="600"
+        fontSize="20px"
       />
       <Text
         content="I USE PROGRAMMING
@@ -75,6 +143,7 @@ const Homepage = () => (
         />
         <a href="https://www.safaricom.co.ke/" target="_blank" rel="noreferrer">@SafaricomPLC</a>
       </CurrentRole>
+      <ProgrammingSkills />
     </div>
   </Wrapper>
 );

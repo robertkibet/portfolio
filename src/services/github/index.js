@@ -1,19 +1,6 @@
 import axios from 'axios';
 import React from 'react';
 
-const projectNames = [
-  'cra-demo-food-ap',
-  'urls-shortener-cra',
-  'mui-storybook-demo',
-  'mfe-react-single-spa',
-  'isFunny',
-  'terraform-with-gcp',
-  'mpesa-node-playground',
-  'nestjs-demo-graphql',
-  'portfolio',
-  'rc-rating-demo',
-];
-
 const useGithub = () => {
   const [projects, setProjects] = React.useState([]);
   const apiKey = process.browser && process.env.NEXT_PUBLIC_GIT_TOKEN;
@@ -26,11 +13,21 @@ const useGithub = () => {
           }, // eslint-disable-line
         })
         .then((response) => {
-          const projectsFetched = response.data.filter((item) => {
-            if (projectNames.some((p) => p === item.name)) return item;
-            return null;
-          });
-          setProjects(projectsFetched);
+          const projectsFetched = response.data.filter((item) => item);
+
+          if (projectsFetched.length > 0) {
+            setProjects(projectsFetched?.sort((a, b) => {
+              const aPushedAt = a.pushed_at;
+              const bPushedAt = b.pushed_at;
+              if (aPushedAt > bPushedAt) {
+                return -1;
+              }
+              if (aPushedAt < bPushedAt) {
+                return 1;
+              }
+              return 0;
+            }));
+          }
         });
     };
     getProjos();
