@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Form } from 'formik';
-import Button from '../../components/button';
+import Button from '../../components/buttons';
 import colors from '../../theme/colors';
 
 export const Wrapper = styled.div`

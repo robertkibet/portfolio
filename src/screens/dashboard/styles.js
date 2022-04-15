@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import Button from '../../components/button';
+import Button from '../../components/buttons';
 
 export const AltButton = styled(Button)``;
 export const Header = styled.div`

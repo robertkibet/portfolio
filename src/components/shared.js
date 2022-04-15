@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import Button from './button';
+import Button from './buttons';
 
 export const Container = styled.div`
   max-width: 1280px;  
