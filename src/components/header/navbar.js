@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import colors from '../../theme/colors';
 import { Container } from '../shared';
 import Text from '../text';
-import Button from '../button';
+import Button from '../button/index';
 import useAuth from '../../containers/useAuth';
 
 const Wrapper = styled.div`
