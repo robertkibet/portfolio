@@ -17,8 +17,7 @@
     "import/resolver": {
       "node": {
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
-      },
-      "caseSensitive": false
+      }
     }
   },
   "rules": {
