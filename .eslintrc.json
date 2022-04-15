@@ -16,9 +16,9 @@
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".jsx"],
-        "moduleDirectory": ["src", "node_modules"]
-      }
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      },
+      "caseSensitive": false
     }
   },
   "rules": {
