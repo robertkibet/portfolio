@@ -4,11 +4,7 @@
     "es2021": true,
     "jest": true
   },
-  "extends": [
-    "next/core-web-vitals",
-    "plugin:react/recommended",
-    "airbnb"
-  ],
+  "extends": ["next/core-web-vitals", "plugin:react/recommended", "airbnb"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -16,19 +12,21 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "prettier"
-  ],
+  "plugins": ["react", "prettier"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx"],
+        "moduleDirectory": ["src", "node_modules"]
+      }
+    }
+  },
   "rules": {
     "no-console": "error",
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [
-          ".js",
-          ".jsx"
-        ]
+        "extensions": [".js", ".jsx"]
       }
     ],
     "max-len": [
@@ -41,9 +39,7 @@
       "error",
       2,
       {
-        "ignoredNodes": [
-          "TemplateLiteral"
-        ]
+        "ignoredNodes": ["TemplateLiteral"]
       }
     ],
     "template-curly-spacing": "off",
@@ -58,10 +54,7 @@
     "no-underscore-dangle": 0,
     "react/forbid-prop-types": 0,
     "react/static-property-placement": 0,
-    "import/imports-first": [
-      "error",
-      "absolute-first"
-    ],
+    "import/imports-first": ["error", "absolute-first"],
     "import/newline-after-import": "error",
     "react/destructuring-assignment": 0
   }
