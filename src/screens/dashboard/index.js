@@ -1,10 +1,10 @@
 import router from 'next/router';
 import React from 'react';
 import Text from '../../components/text';
-import Button from '../../components/button';
-
 import useAuth from '../../containers/useAuth';
-import { Header, Wrapper, Container } from './styles';
+import {
+  Header, Wrapper, Container, AltButton,
+} from './styles';
 
 const Dashboard = () => {
   const { state } = useAuth();
@@ -20,7 +20,7 @@ const Dashboard = () => {
     <Container>
       <Header>
         <Text content="Dashboard" fontSize="16px" fontWeight="600" />
-        <Button onClick={() => router.push('/dashboard/add-blog')} title={<Text content="+ Add Blog" />} />
+        <AltButton onClick={() => router.push('/dashboard/add-blog')} title={<Text content="+ Add Blog" />} />
       </Header>
       <Wrapper>
         <div>blogs</div>

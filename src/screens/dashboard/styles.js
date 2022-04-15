@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
+import Button from '../../components/button';
 
+export const AltButton = styled(Button)``;
 export const Header = styled.div`
   display: flex;
   justify-content: space-between;
