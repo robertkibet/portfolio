@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
   gap: 20px;
  
-  margin-top: 150px;
+  margin-top: 50px;
   margin-bottom: 150px;
 `;
 const Avatar = styled.div`

@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   gap: 20px;
  
   margin-bottom: 150px;
-  margin-top: 150px;
+  margin-top: 50px;
 `;
 
 const Avatar = styled.div`
