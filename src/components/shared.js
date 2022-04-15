@@ -10,11 +10,5 @@ const Container = styled.div`
   padding-right: 24px;
 `;
 
-const Button = styled.div`
-  position: fixed;
-  height: 40px;
-  width: 100%;
-  box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
-`;
-
-export { Container, Button };
+export const m = {};
+export { Container };

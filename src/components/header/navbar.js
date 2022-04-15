@@ -1,9 +1,10 @@
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 import colors from '../../theme/colors';
-import { Button, Container } from '../shared';
+import { Container } from '../shared';
 import Text from '../text';
 import useAuth from '../../containers/useAuth';
+import Button from '../button';
 
 const Wrapper = styled.div`
   position: fixed;

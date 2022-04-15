@@ -1,7 +1,7 @@
 import router from 'next/router';
 import React from 'react';
-import Button from '../../components/button';
 import Text from '../../components/text';
+import Button from '../../components/button';
 
 import useAuth from '../../containers/useAuth';
 import { Header, Wrapper, Container } from './styles';
