@@ -23,4 +23,4 @@ export const firestore = windowExists ? getFirestore(app) : undefined;
 export const fireAnalytics = windowExists ? getAnalytics() : undefined;
 export const logEvent = eventLogger;
 export const googleProvider = new GoogleAuthProvider();
-export const googleAuth = getAuth();
+export const firebaseAuth = windowExists ? getAuth(app) : undefined;

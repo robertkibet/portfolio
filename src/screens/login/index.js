@@ -1,15 +1,15 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
-
+import Text from '../../components/text';
+import Button from '../../components/button';
 import {
   Wrapper,
   LoginFormSection,
   HeaderSection,
 
 } from './styles';
-import { googleAuth, googleProvider } from '../../services/firebase';
-import Text from '../../components/text';
+import { firebaseAuth, googleProvider } from '../../services/firebase';
 import useAuth from '../../containers/useAuth';
 
 const Login = () => {
@@ -26,13 +26,14 @@ const Login = () => {
     dispatch({
       type: 'LOGIN_PENDING',
     });
-    signInWithPopup(googleAuth, googleProvider)
+    signInWithPopup(firebaseAuth, googleProvider)
       .then((result) => {
         // This gives you a Google Access Token. You can use it to access the Google API.
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
         // The signed-in user info.
         const { user } = result;
+
         dispatch({
           type: 'LOGIN_SUCCESS',
           data: {
@@ -48,12 +49,11 @@ const Login = () => {
         // The AuthCredential type that was used.
         // const credential = GoogleAuthProvider.credentialFromError(error);
         dispatch({
-          type: 'LOGIN_ERROR',
+          type: 'LOGIN_FAIL',
           error: errorMessage,
         });
       });
   };
-  console.log('state', state);
 
   return (
     <Wrapper>
@@ -70,7 +70,7 @@ const Login = () => {
             fontWeight="600"
           />
         </HeaderSection>
-        <button onClick={loginWithGoogle} type="button">Login</button>
+        <Button onClick={loginWithGoogle} type="button" primary title={<Text content="Login with Google" fontWeight="600" />} />
 
       </LoginFormSection>
     </Wrapper>

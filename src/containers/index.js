@@ -7,8 +7,8 @@ export const defaultState = {
   error: undefined,
   loading: false,
 };
-export const authReducer = (state, action) => {
-  switch (action) {
+export const authReducer = (state = defaultState, action) => {
+  switch (action.type) {
   case 'LOGIN_SUCCESS':
     return {
       ...state,
@@ -20,8 +20,20 @@ export const authReducer = (state, action) => {
     return {
       ...state,
       user: undefined,
-      error: action.data.error,
+      error: action.error,
       loading: false,
+    };
+  case 'LOGOUT_SUCCES':
+    return {
+      user: undefined,
+      error: undefined,
+      loading: false,
+    };
+  case 'LOGOUT_FAIL':
+    return {
+      ...state,
+      error: action.error,
+
     };
   case 'LOGIN_PENDING':
     return {

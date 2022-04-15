@@ -1,11 +1,12 @@
-import React from 'react';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
-import { authReducer, defaultState } from '../../containers';
+import { signOut } from 'firebase/auth';
 import colors from '../../theme/colors';
 import { Container } from '../shared';
 import Text from '../text';
-import Button from '../Button';
+import Button from '../button';
+import useAuth from '../../containers/useAuth';
+import { firebaseAuth } from '../../services/firebase';
 
 const Wrapper = styled.div`
   position: fixed;
@@ -45,28 +46,40 @@ const Content = styled.div`
   }
 `;
 const Navbar = () => {
-  const [state, dispatch] = React.useReducer(authReducer, defaultState);
-
+  const { state, dispatch } = useAuth();
   const router = useRouter();
+
   const navigateTo = (link) => {
     router.push(link);
   };
-  const signOut = () => {
-    dispatch({ type: 'SIGN_OUT' });
+
+  const logout = () => {
+    signOut(firebaseAuth).then(() => {
+      dispatch({ type: 'LOGOUT_SUCCES' });
+    }).catch((error) => {
+      dispatch({ type: 'LOGOUT_ERROR', error });
+    });
   };
+
   return (
     <Wrapper>
       <AppBar menus>
         <AppBar>
+          {state?.user && (
+            <Content active={router.pathname === '/dashboard'} onClick={() => navigateTo('/dashboard')}>
+              <Text content="Dashboard" fontWeight="600" />
+            </Content>
+          )}
           <Content active={router.pathname === '/projects'} onClick={() => navigateTo('/projects')}>
             <Text content="Projects" fontWeight="600" />
           </Content>
           <Content active={router.pathname === '/blog'} onClick={() => navigateTo('/blog')}>
             <Text content="Blog" fontWeight="600" />
           </Content>
+
         </AppBar>
         {!state?.user ? <Button onClick={() => navigateTo('/sign-in')} title={<Text content="Login" fontWeight="600" />} />
-          : <Button onClick={signOut} title={<Text content="Logout" fontWeight="600" />} />}
+          : <Button onClick={logout} title={<Text content="Logout" fontWeight="600" />} />}
       </AppBar>
     </Wrapper>
   );

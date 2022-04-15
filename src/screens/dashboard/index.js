@@ -1,9 +1,9 @@
 import router from 'next/router';
 import React from 'react';
-import { authReducer, defaultState } from '../../containers';
+import useAuth from '../../containers/useAuth';
 
 const Dashboard = () => {
-  const [state] = React.useReducer(authReducer, defaultState);
+  const { state } = useAuth();
 
   React.useEffect(() => {
     if (!state?.user) {
