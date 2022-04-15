@@ -1,35 +1,7 @@
 import Head from 'next/head';
-import { AnimateSharedLayout } from 'framer-motion';
-import styled from '@emotion/styled';
-import Header from '../components/header';
-import { Container } from '../components/shared';
 import '../../public/assets/globals.css';
 import '../../public/assets/icons/css/icons.css';
-import Navbar from '../components/header/navbar';
-import Footer from '../components/footer';
-
-const Wrapper = styled(Container)`
-  height: 100vh;
-  padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 120px;
-  margin-bottom: 300px;
-  position: relative;
-`;
-
-const gtagInit = () => {
-  if (process.browser) {
-    window.dataLayer = window.dataLayer || [];
-    // eslint-disable-next-line
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-XDQ4WDNS7N');
-  }
-};
+import Layout from '../layout';
 
 function MyApp(props) {
   const { Component, pageProps } = props;
@@ -76,11 +48,6 @@ function MyApp(props) {
 "
         />
         <meta property="twitter:image" content="https://storage.googleapis.com/sensen-ventures.appspot.com/robert-kibet.PNG" />
-        <script>
-          {' '}
-          { process.env.NEXT_PUBLIC_ENVIRONMENT === 'production' && gtagInit() }
-          {' '}
-        </script>
 
         <link rel="manifest" href="/manifest.json" />
         <link
@@ -99,14 +66,11 @@ function MyApp(props) {
         <meta name="theme-color" content="#5635be" />
       </Head>
       <main>
-        <Header />
-        <Navbar />
-        <Wrapper>
-          <AnimateSharedLayout>
-            <Component {...pageProps} />
-          </AnimateSharedLayout>
-        </Wrapper>
-        <Footer />
+        <Layout>
+          {/* <AnimateSharedLayout> */}
+          <Component {...pageProps} />
+          {/* </AnimateSharedLayout> */}
+        </Layout>
       </main>
 
     </>

@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   position: fixed;
   display: block;
   z-index: 99;
+  top: 0;
   height: 60px;
   width: 100%;
   border-bottom: 1px solid ${colors.sweetBlueLine};

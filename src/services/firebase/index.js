@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 import { getAnalytics, logEvent as eventLogger } from 'firebase/analytics';
+import { GoogleAuthProvider, getAuth } from 'firebase/auth';
 
 import 'firebase/functions';
 
@@ -21,3 +22,5 @@ const app = initializeApp(firebaseConfig);
 export const firestore = windowExists ? getFirestore(app) : undefined;
 export const fireAnalytics = windowExists ? getAnalytics() : undefined;
 export const logEvent = eventLogger;
+export const googleProvider = new GoogleAuthProvider();
+export const googleAuth = getAuth();

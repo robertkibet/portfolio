@@ -107,8 +107,8 @@ const Homepage = () => (
     <Avatar>
       <Image
         priority
-        src="https://storage.googleapis.com/sensen-ventures.appspot.com/robert-kibet-software-engineer.jpg"
-        layout="responsive"
+        src="https://storage.googleapis.com/sensen-ventures.appspot.com/robert-kibet-software-engineer-2.jpg"
+        layout="intrinsic"
         width="400px"
         height="400px"
         alt="Robert Kibet - Software Engineer"

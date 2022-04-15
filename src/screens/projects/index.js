@@ -59,7 +59,7 @@ const Projects = () => {
       return projects.map((item) => (
         <Link target="_blank" href={item.html_url} key={item.id}>
           <Items>
-            <Text content={replaceHyphen(item.name)} color={colors.white} fontWeight="700" fontSize="1.5rem" />
+            <Text content={replaceHyphen(item.name)} color={colors.white} fontWeight="600" fontSize="1.5rem" />
             <Text content={item.description} color={colors.white} />
             <Avatar />
           </Items>
