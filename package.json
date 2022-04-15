@@ -11,16 +11,19 @@
   "dependencies": {
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
-    "@lexical/react": "^0.2.1",
     "@sentry/nextjs": "^6.13.2",
     "axios": "^0.21.4",
     "axios-api-profiler": "^1.1.2",
+    "draft-js": "^0.11.7",
+    "draftjs-to-html": "^0.9.1",
     "firebase": "^9.6.11",
     "formik": "^2.2.9",
-    "lexical": "^0.2.1",
+    "html-to-draftjs": "^1.5.0",
     "next": "11.1.2",
     "react": "17.0.2",
+    "react-color": "^2.19.3",
     "react-dom": "17.0.2",
+    "react-draft-wysiwyg": "^1.14.7",
     "yup": "^0.32.11"
   },
   "devDependencies": {
