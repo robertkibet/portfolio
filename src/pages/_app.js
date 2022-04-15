@@ -76,7 +76,6 @@ function MyApp(props) {
 "
         />
         <meta property="twitter:image" content="https://storage.googleapis.com/sensen-ventures.appspot.com/robert-kibet.PNG" />
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_TAG_MANAGER}`} />
         <script>
           {' '}
           { process.env.NEXT_PUBLIC_ENVIRONMENT === 'production' && gtagInit() }

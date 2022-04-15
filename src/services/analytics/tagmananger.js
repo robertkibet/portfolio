@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import React from 'react';
 import axios from 'axios';
-// import sentryLogger from '../logger';
+import sentryLogger from '../logger';
 
 const useTracker = () => {
   const [ip, setIP] = React.useState('');
@@ -16,18 +16,20 @@ const useTracker = () => {
   }, []);
 
   const track = (page, action = undefined) => {
-    // try {
-    dataLayer.push({
-      event: 'pageVisit',
-      user: {
-        ip: ip || undefined,
-        page,
-        action,
-      },
-    });
-    // } catch (error) {
-    // sentryLogger(error);
-    // }
+    try {
+      if (dataLayer) {
+        dataLayer.push({
+          event: 'socialsClicked',
+          user: {
+            ip: ip || undefined,
+            page,
+            action,
+          },
+        });
+      }
+    } catch (error) {
+      sentryLogger(error);
+    }
   };
   return { track, ip };
 };
