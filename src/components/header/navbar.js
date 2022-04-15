@@ -1,10 +1,9 @@
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 import colors from '../../theme/colors';
-import { Container } from '../shared';
+import { Container, StyledBtn } from '../shared';
 import Text from '../text';
 import useAuth from '../../containers/useAuth';
-import Button from '../button';
 
 const Wrapper = styled.div`
   position: fixed;
@@ -68,8 +67,8 @@ const Navbar = () => {
           </Content>
 
         </AppBar>
-        {!state?.user ? <Button onClick={() => navigateTo('/sign-in')} title={<Text content="Login" fontWeight="600" />} />
-          : <Button onClick={logout} title={<Text content="Logout" fontWeight="600" />} />}
+        {!state?.user ? <StyledBtn onClick={() => navigateTo('/sign-in')} title={<Text content="Login" fontWeight="600" />} />
+          : <StyledBtn onClick={logout} title={<Text content="Logout" fontWeight="600" />} />}
       </AppBar>
     </Wrapper>
   );

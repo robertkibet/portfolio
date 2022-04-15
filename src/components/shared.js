@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
+import Button from './button';
 
-const Container = styled.div`
+export const Container = styled.div`
   max-width: 1280px;  
   width: 100%;
   box-sizing: border-box;
@@ -10,5 +11,4 @@ const Container = styled.div`
   padding-right: 24px;
 `;
 
-export const m = {};
-export { Container };
+export const StyledBtn = styled(Button)``;
