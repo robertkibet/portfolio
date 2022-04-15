@@ -11,6 +11,7 @@ const Dashboard = () => {
       router.push('/');
     }
   }, [state]);
+
   return (
 
     <div>Dashboard</div>
