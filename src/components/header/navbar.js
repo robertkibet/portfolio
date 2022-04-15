@@ -1,12 +1,10 @@
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
-import { signOut } from 'firebase/auth';
 import colors from '../../theme/colors';
 import { Container } from '../shared';
 import Text from '../text';
 import Button from '../button';
 import useAuth from '../../containers/useAuth';
-import { firebaseAuth } from '../../services/firebase';
 
 const Wrapper = styled.div`
   position: fixed;
@@ -46,19 +44,11 @@ const Content = styled.div`
   }
 `;
 const Navbar = () => {
-  const { state, dispatch } = useAuth();
+  const { state, logout } = useAuth();
   const router = useRouter();
 
   const navigateTo = (link) => {
     router.push(link);
-  };
-
-  const logout = () => {
-    signOut(firebaseAuth).then(() => {
-      dispatch({ type: 'LOGOUT_SUCCES' });
-    }).catch((error) => {
-      dispatch({ type: 'LOGOUT_ERROR', error });
-    });
   };
 
   return (

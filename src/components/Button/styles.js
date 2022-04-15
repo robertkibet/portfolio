@@ -23,6 +23,9 @@ const StyledButton = styled.button`
   &: before {
     font-weight: 600px;
   }
+  &: disabled{
+    cursor: no-drop;
+  }
 
   &: hover {
     background-color: ${({ primary }) => {

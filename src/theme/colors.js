@@ -4,5 +4,7 @@ const colors = {
   sweetBlueLine: 'rgb(86 53 190 / 12%)',
   sweetGreen: '#2ade93',
   white: '#ffffff',
+  inputBorder: '#d9dcdb',
+  red: '#d32f2f',
 };
 export default colors;

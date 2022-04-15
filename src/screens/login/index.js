@@ -1,20 +1,40 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import * as Yup from 'yup';
+import { Formik } from 'formik';
 import Text from '../../components/text';
-import Button from '../../components/button';
+
 import {
   Wrapper,
   LoginFormSection,
+  Container,
   HeaderSection,
-
+  StyledForm,
+  FieldWrapper,
+  StyledButton,
+  StyledInput,
+  HelperMessage,
 } from './styles';
-import { firebaseAuth, googleProvider } from '../../services/firebase';
+
 import useAuth from '../../containers/useAuth';
+import DismissableAlert from '../../components/alerts/dismissable-alert';
+
+const loginSchema = Yup.object().shape({
+  email: Yup.string()
+    .required('Enter your email')
+    .test('is-accepted', 'This email is not accepted', (value) => {
+      if (value) {
+        return value.trim().endsWith('@kibet.me');
+      }
+      return false;
+    }),
+  password: Yup.string().required('password is required'),
+});
 
 const Login = () => {
   const router = useRouter();
-  const { state, dispatch } = useAuth();
+  const auth = useAuth();
+  const { state, login, isLoginIn } = auth;
 
   React.useEffect(() => {
     if (state.user) {
@@ -22,56 +42,80 @@ const Login = () => {
     }
   }, [state]);
 
-  const loginWithGoogle = async () => {
-    dispatch({
-      type: 'LOGIN_PENDING',
-    });
-    signInWithPopup(firebaseAuth, googleProvider)
-      .then((result) => {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
-        // The signed-in user info.
-        const { user } = result;
-
-        dispatch({
-          type: 'LOGIN_SUCCESS',
-          data: {
-            user,
-            token,
-          },
-        });
-      }).catch((error) => {
-        // const errorCode = error.code;
-        const errorMessage = error.message;
-        // The email of the user's account used.
-        // const { email } = error;
-        // The AuthCredential type that was used.
-        // const credential = GoogleAuthProvider.credentialFromError(error);
-        dispatch({
-          type: 'LOGIN_FAIL',
-          error: errorMessage,
-        });
-      });
+  const handleLogin = async (values) => {
+    await login(values.email.trim(), values.password.trim());
   };
 
   return (
     <Wrapper>
+      {!isLoginIn && state?.error && <DismissableAlert severity="error" message={state?.error} />}
       <LoginFormSection>
         <HeaderSection>
           <Text
             content="Login"
-            fontSize="16px"
+            fontSize="24px"
             fontWeight="600"
           />
           <Text
             content="Cool stuff belong here :)"
-            fontSize="12px"
+            fontSize="16px"
             fontWeight="600"
           />
-        </HeaderSection>
-        <Button onClick={loginWithGoogle} type="button" primary title={<Text content="Login with Google" fontWeight="600" />} />
 
+        </HeaderSection>
+        <Formik
+          initialValues={{
+            email: '',
+            password: '',
+          }}
+          onSubmit={handleLogin}
+          validateOnChange
+          validateOnBlur
+          validationSchema={loginSchema}
+        >
+          {({
+            values, errors, handleChange, handleBlur, handleSubmit, isValid, dirty,
+          }) => (
+            <StyledForm onSubmit={handleSubmit}>
+              <Container>
+                <FieldWrapper required error={!!errors.email} variant="standard">
+                  <StyledInput
+                    error={!!errors.email}
+                    id="email"
+                    placeholder="Enter your email"
+                    type="text"
+                    value={values.email}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    label="Email"
+                    variant="outlined"
+                    size="small"
+                  />
+                  {!!errors.email && <HelperMessage error={!!errors.email}>{errors.email}</HelperMessage>}
+                </FieldWrapper>
+
+                <FieldWrapper required error={!!errors.password} variant="standard">
+                  <StyledInput
+                    error={!!errors.password}
+                    id="password"
+                    placeholder="Enter your password"
+                    type="password"
+                    value={values.password}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    label="Password"
+                    variant="outlined"
+                    size="small"
+                  />
+                  {!!errors.password && <HelperMessage error={!!errors.password}>{errors.password}</HelperMessage>}
+                </FieldWrapper>
+
+                <StyledButton disabled={!(isValid && dirty) || isLoginIn} type="submit" primary title={<Text content={isLoginIn ? 'loading...' : 'Login'} fontWeight="600" />} />
+
+              </Container>
+            </StyledForm>
+          )}
+        </Formik>
       </LoginFormSection>
     </Wrapper>
   );

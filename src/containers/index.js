@@ -23,7 +23,7 @@ export const authReducer = (state = defaultState, action) => {
       error: action.error,
       loading: false,
     };
-  case 'LOGOUT_SUCCES':
+  case 'LOGOUT_SUCCESS':
     return {
       user: undefined,
       error: undefined,
