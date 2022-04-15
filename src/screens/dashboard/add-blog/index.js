@@ -41,7 +41,7 @@ const AddBlog = () => {
     const content = draftToHtml(convertToRaw(editorState.getCurrentContent()));
     setIsSubmitting(true);
     try {
-      const url = encodeURIComponent(values.title.toLowerCase().replace(/[^a-z0-9 _-]+/gi, '-'));
+      const url = values.title.toLowerCase().replace(/[^a-z0-9 _-]+/gi, '-');
 
       const extendedBlogUrl = `${new Date().toISOString().slice(0, 10)}-${url}`;
 

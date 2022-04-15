@@ -1,4 +1,4 @@
-import Blog from '../screens/blog';
+import Blog from '../../screens/blog';
 
 const Blogs = () => (
   <Blog />

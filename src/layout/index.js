@@ -22,6 +22,7 @@ const Layout = ({ children }) => {
   const router = useRouter();
   const pageName = router.pathname;
   const authPages = ['/sign-in'];
+  const isBlog = router.pathname.includes('/blog');
   const isAuth = authPages.some((page) => pageName.includes(page));
   const [state, dispatch] = React.useReducer(authReducer, defaultState);
 
@@ -41,7 +42,7 @@ const Layout = ({ children }) => {
           {children}
         </Content>
       </Wrapper>
-      <Footer />
+      {!isBlog && <Footer />}
     </AuthContext.Provider>
   );
 };
