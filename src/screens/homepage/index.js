@@ -9,10 +9,10 @@ const Wrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
   text-align: center;
   gap: 20px;
- 
+
   margin-bottom: 150px;
   margin-top: 50px;
 `;
@@ -39,13 +39,13 @@ const Pills = styled.div`
   border-radius: 16px;
   padding-left: 15px;
   padding-right: 15px;
-  min-width:50px;
+  min-width: 50px;
   display: grid;
   place-items: center;
   align-items: center;
   font-weight: 600;
   background-color: #efefef;
-  *{
+  * {
     margin: 0;
     padding: 0;
   }
@@ -57,6 +57,9 @@ const SkillsWrapper = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+`;
+const Linked = styled.a`
+  text-decoration: none;
 `;
 const Skills = styled.div`
   margin-top: 20px;
@@ -84,15 +87,10 @@ const languages = [
 ];
 const ProgrammingSkills = () => (
   <Skills>
-
     <SkillsWrapper>
       {languages.map((language) => (
         <Pills key={language}>
-          <Text
-            content={language}
-            fontSize="12px"
-            fontWeight="600"
-          />
+          <Text content={language} fontSize="12px" fontWeight="600" />
         </Pills>
       ))}
     </SkillsWrapper>
@@ -115,11 +113,7 @@ const Homepage = () => (
       />
     </Avatar>
     <div>
-      <Text
-        content="Robert Kibet Kiprono"
-        fontWeight="600"
-        fontSize="20px"
-      />
+      <Text content="Robert Kibet Kiprono" fontWeight="600" fontSize="20px" />
       <Text
         content="I USE PROGRAMMING
       TO CREATE ENJOYABLE
@@ -128,21 +122,20 @@ const Homepage = () => (
         fontWeight="600"
         fontSize="20px"
       />
-      <Text
-        content="I ENJOY HIKING AS MUCH AS COOKING ;P "
-        fontSize="14px"
-      />
+      <Text content="I ENJOY HIKING AS MUCH AS COOKING ;P " fontSize="14px" />
       <CurrentRole>
-        <Text
-          content="Currently:"
-          fontSize="14px"
-        />
-        <Text
-          content="Software Engineer Javascript"
-          fontSize="14px"
-        />
-        <a href="https://www.safaricom.co.ke/" target="_blank" rel="noreferrer">@SafaricomPLC</a>
+        <Text content="Currently:" fontSize="14px" />
+        <Text content="Software Engineer Javascript" fontSize="14px" />
+        <Linked href="http://credmark.com/" target="_blank" rel="noreferrer">
+          @Credmark
+        </Linked>
       </CurrentRole>
+      <Linked
+        target="_blank"
+        href="https://docs.google.com/document/d/1I044m5TDYqPk5SZdAzxIzH7JHTB81i_YwFLrbxFtsf0/edit?usp=sharing"
+      >
+        View my Resume
+      </Linked>
       <ProgrammingSkills />
     </div>
   </Wrapper>
