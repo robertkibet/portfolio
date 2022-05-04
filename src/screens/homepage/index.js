@@ -33,6 +33,9 @@ const CurrentRole = styled.code`
   a {
     color: ${colors.sweetBlack};
   }
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 const Pills = styled.div`
   height: 30px;
@@ -126,8 +129,8 @@ const Homepage = () => (
       <CurrentRole>
         <Text content="Currently:" fontSize="14px" />
         <Text content="Software Engineer Javascript" fontSize="14px" />
-        <Linked href="http://credmark.com/" target="_blank" rel="noreferrer">
-          @Credmark
+        <Linked href="http://safaricom.co.le/" target="_blank" rel="noreferrer">
+          @Safaricom
         </Linked>
       </CurrentRole>
       <Linked
