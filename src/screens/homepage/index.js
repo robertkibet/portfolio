@@ -129,7 +129,7 @@ const Homepage = () => (
       <CurrentRole>
         <Text content="Currently:" fontSize="14px" />
         <Text content="Software Engineer Javascript" fontSize="14px" />
-        <Linked href="http://safaricom.co.le/" target="_blank" rel="noreferrer">
+        <Linked href="http://safaricom.co.ke/" target="_blank" rel="noreferrer">
           @Safaricom
         </Linked>
       </CurrentRole>
